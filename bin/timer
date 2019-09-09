@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+# Timer
+# optional flags:
+#	-p -- don't stop playing until aborted
+# example input: 
+#	timer 1h20m -- time 1 hour and 20 min
+
+local curr_time=$(date +%s)
+local interval='date'
+	
+if [[ $1 =~ "([0-9]+)h" ]]; then
+	interval+=" -v+$match[1]H"
+fi
+
+if [[ $1 =~ "([0-9]+)m" ]]; then
+	interval+=" -v+$match[1]M"
+fi
+
+if [[ $1 =~ "([0-9]+)s" ]]; then
+	interval+=" -v+$match[1]S"
+fi
+
+local target_time=`eval $interval" +%s"`
+sleep $(( $target_time - $curr_time ))
+osascript -e 'display notification "Time is up!" with title "Timer"'
+
+while true
+do
+	afplay /System/Library/Sounds/Purr.aiff
+done
