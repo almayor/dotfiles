@@ -21,10 +21,7 @@ cd $HOME/Desktop
 
 # Anaconda plugins are sourced from a separate rc file as sourcing is slow
 
-alias aconda="\
-	source $HOME/.zshrc-conda &&\
-	source '$ZSHP/zsh-autoswitch-conda/autoswitch_conda.plugin.zsh'\
-"
+alias aconda="source $HOME/.zshrc-conda"
 alias jpn="jupyter notebook"
 #aconda # toggle to automatically load conda at start-up
 
