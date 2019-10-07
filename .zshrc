@@ -7,9 +7,10 @@ alias cdd="cd $HOME/Desktop"
 
 # School 42 specific aliases
 
-alias run="gcc -Wall -Wextra -Werror -o output *.c && ./output"
+alias run="gcc -Wall -Wextra -Werror -o output *.c -lft && ./output"
 # Libfttest https://github.com/jtoty/Libftest
 alias libfttest="bash /Users/user/Desktop/Libftest/grademe.sh"
+alias 42FileChecker="/Users/user/.zsh-plugins/42FileChecker/42FileChecker.sh"
 
 # zsh plugins
 
@@ -52,10 +53,6 @@ source $ZSHP/colored-man-pages/colored-man-pages.plugin.zsh
 
 # invoked by aconda alias
 # source $ZSHP/zsh-autoswitch-conda/autoswitch_conda.plugin.zsh
-
-# ansiweather https://github.com/fcambus/ansiweather
-
-alias weather="ansiweather"
 
 # bashmarks https://github.com/ebgraham/bashmarks
 
@@ -142,3 +139,50 @@ export PATH=$HOME/bin:$PATH
 # lorem-ipsum
 
 alias lorem-ipsum="/Users/user/.zsh-plugins/lorem_ipsum/lorem_ipsum.sh"
+
+# wireless hacking
+
+alias currentap='sudo airport --getinfo'
+alias scanarea='sudo airport -s'
+
+alias setchannelto1='sudo airport --channel=2'
+alias setchannelto2='sudo airport --channel=2'
+alias setchannelto3='sudo airport --channel=3'
+alias setchannelto4='sudo airport --channel=4'
+alias setchannelto5='sudo airport --channel=5'
+alias setchannelto6='sudo airport --channel=6'
+alias setchannelto7='sudo airport --channel=7'
+alias setchannelto8='sudo airport --channel=8'
+alias setchannelto9='sudo airport --channel=9'
+alias setchannelto10='sudo airport --channel=10'
+alias setchannelto11='sudo airport --channel=11'
+alias setchannelto12='sudo airport --channel=12'
+alias setchannelto13='sudo airport --channel=13'
+
+alias sniff='sudo /usr/libexec/airportd en0 sniff'
+
+# recursive make
+
+make() {
+	if [[ $1 == "recur" ]]; then
+		find . -type d | while read dir; do
+			if [ -e "$dir/Makefile" -o -e "$dir/makefile" ]; then
+				make -C "$dir" ${@:2}
+			fi
+		done
+	else
+		command make $@
+	fi
+}
+
+# transfer to 0x0.st https://0x0.st
+
+transfer() {
+	for file in "$@"; do
+		curl -F"file=@$file" https://0x0.st
+	done
+}
+
+# TasteDive API https://tastedive.com/ and https://github.com/alexanderepstein/Bash-Snippets
+
+export TASTE_API_KEY="347490-TestShel-8JWE80Q2"
