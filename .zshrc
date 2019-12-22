@@ -186,3 +186,11 @@ transfer() {
 # TasteDive API https://tastedive.com/ and https://github.com/alexanderepstein/Bash-Snippets
 
 export TASTE_API_KEY="347490-TestShel-8JWE80Q2"
+
+# Part III project
+
+export PYTHONPATH="/Users/user/Library/Mobile Documents/com~apple~CloudDocs/almayor/study/2015/Cambridge/Academics Cambridge/Part III project/code/local_pylib/RMPD.py":$PYTHONPATH
+
+# sherlock
+
+export PATH="/Users/user/bin/sherlock":$PATH
