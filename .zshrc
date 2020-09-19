@@ -9,7 +9,6 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_DISABLE_COMPFIX="true" # multiuser brew
 export HOMEBREW_NO_AUTO_UPDATE=1
 export TERM="xterm-256color"
-export CDPATH=$HOME/Desktop:$HOME/Documents/programming/42:$HOME/Downloads:$HOME/Documents/programming
 
 export PATH=$HOME/Library/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -17,7 +16,10 @@ export PATH=$HOME/Library/bin/42-utils:$PATH
 export PATH="$HOME/Library/bin/sherlock":$PATH
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # gnu-sed instead of OSX sed
-export PATH="/Users/almayor/Library/Python/3.8/bin:$PATH"
+# export PATH="/Users/almayor/Library/Python/3.8/bin:$PATH"
+export PATH="/Users/almayor/Library/Python/3.7/bin:$PATH"
+
+hash -d 42school=~/Documents/programming/42
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
